@@ -4,9 +4,9 @@ MAINTAINER fanningert <thomas@fanninger.at>
 
 RUN apk update && \
 	apk add wget && \
-	wget https://github.com/mayswind/AriaNg/releases/download/0.3.0/aria-ng-0.3.0.zip /aria2-webui && \
+	wget https://github.com/mayswind/AriaNg/releases/download/0.3.0/aria-ng-0.3.0.zip /aria2-webui/aria-ng.zip && \
         cd /aria2-webui && \
-	unzip aria-ng-0.3.0.zip && \
+	unzip aria-ng.zip && \
     	apk del wget && \
 	apk add --update darkhttpd
 
