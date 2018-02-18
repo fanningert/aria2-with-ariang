@@ -4,7 +4,7 @@ MAINTAINER fanningert <thomas@fanninger.at>
 
 RUN apk update && \
 	apk add wget unzip && \
-        mkdir -p /aria2-webui
+        mkdir -p /aria2-webui && \
         cd /aria2-webui && \
 	wget https://github.com/mayswind/AriaNg/releases/download/0.3.0/aria-ng-0.3.0.zip aria-ng.zip && \
 	unzip aria-ng.zip && \
