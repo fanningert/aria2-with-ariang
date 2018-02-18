@@ -3,12 +3,11 @@ FROM fanningert/aria2-daemon
 MAINTAINER fanningert <thomas@fanninger.at>
 
 RUN apk update && \
-	apk add wget unzip && \
+	apk add wget libarchive-tools && \
         mkdir -p /aria2-webui && \
         cd /aria2-webui && \
-	wget -o aria-ng.zip https://github.com/mayswind/AriaNg/releases/download/0.3.0/aria-ng-0.3.0.zip && \
-	unzip aria-ng.zip && \
-    	apk del wget unzip && \
+	wget -qO- https://github.com/mayswind/AriaNg/releases/download/0.3.0/aria-ng-0.3.0.zip | bsdtar -xvf- && \
+    	apk del wget libarchive-tools && \
 	apk add --update darkhttpd
 
 ADD root/ /
